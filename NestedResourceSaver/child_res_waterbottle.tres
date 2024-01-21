@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="ChildResource" load_steps=2 format=3 uid="uid://he787vtpkhco"]
+
+[ext_resource type="Script" path="res://NestedResourceSaver/CustomResources/ChildResource.gd" id="1_kawqu"]
+
+[resource]
+script = ExtResource("1_kawqu")
+name = "Waterbottle"
+value = 5

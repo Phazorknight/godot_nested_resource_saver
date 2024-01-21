@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ParentResource" load_steps=3 format=3 uid="uid://crjtuu48ftf31"]
+
+[ext_resource type="Resource" uid="uid://he787vtpkhco" path="res://NestedResourceSaver/child_res_waterbottle.tres" id="1_7wn3k"]
+[ext_resource type="Script" path="res://NestedResourceSaver/CustomResources/ParentResource.gd" id="2_pv0fs"]
+
+[resource]
+script = ExtResource("2_pv0fs")
+child_resource = ExtResource("1_7wn3k")
+name = "Parent Res A"
+value = 1

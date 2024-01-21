@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ParentResource" load_steps=3 format=3 uid="uid://lsxcqis4ar6r"]
+
+[ext_resource type="Script" path="res://NestedResourceSaver/CustomResources/ParentResource.gd" id="1_a52ps"]
+[ext_resource type="Resource" uid="uid://b2nyjgvfwm5fj" path="res://NestedResourceSaver/child_res_apples.tres" id="1_u02uy"]
+
+[resource]
+script = ExtResource("1_a52ps")
+child_resource = ExtResource("1_u02uy")
+name = "ParentRes B"
+value = 5

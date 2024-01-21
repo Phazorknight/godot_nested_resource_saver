@@ -1,0 +1,182 @@
+[gd_scene load_steps=6 format=3 uid="uid://dotqklya2lg4j"]
+
+[ext_resource type="Script" path="res://NestedResourceSaver/Saving_Nested_Resources_Test.gd" id="1_mhc1d"]
+[ext_resource type="Resource" uid="uid://crjtuu48ftf31" path="res://NestedResourceSaver/parent_resource_a.tres" id="2_p3ii5"]
+[ext_resource type="Resource" uid="uid://he787vtpkhco" path="res://NestedResourceSaver/child_res_waterbottle.tres" id="3_7ew5o"]
+[ext_resource type="Resource" uid="uid://b2nyjgvfwm5fj" path="res://NestedResourceSaver/child_res_apples.tres" id="4_4rjy8"]
+[ext_resource type="Resource" uid="uid://lsxcqis4ar6r" path="res://NestedResourceSaver/parent_resource_b.tres" id="4_qd5t5"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mhc1d")
+current_parent_resource = ExtResource("2_p3ii5")
+button_parent_resource_a = ExtResource("2_p3ii5")
+button_parent_resource_b = ExtResource("4_qd5t5")
+button_child_resource_a = ExtResource("3_7ew5o")
+button_child_resource_b = ExtResource("4_4rjy8")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 30
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_constants/separation = 20
+
+[node name="LeftMarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 30
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/LeftMarginContainer"]
+layout_mode = 2
+
+[node name="Button_Save" type="Button" parent="MarginContainer/HBoxContainer/LeftMarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = "Save"
+
+[node name="Button_Load" type="Button" parent="MarginContainer/HBoxContainer/LeftMarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = "Load"
+
+[node name="RightMarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 30
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/RightMarginContainer"]
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/HBoxContainer/RightMarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer/RightMarginContainer/VBoxContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="ResourceInfo" type="VBoxContainer" parent="MarginContainer/HBoxContainer/RightMarginContainer/VBoxContainer/PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/RightMarginContainer/VBoxContainer/PanelContainer/MarginContainer/ResourceInfo"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/RightMarginContainer/VBoxContainer/PanelContainer/MarginContainer/ResourceInfo/HBoxContainer"]
+layout_mode = 2
+text = "Parent Resource: "
+
+[node name="ParentResource_Label" type="Label" parent="MarginContainer/HBoxContainer/RightMarginContainer/VBoxContainer/PanelContainer/MarginContainer/ResourceInfo/HBoxContainer"]
+layout_mode = 2
+text = "PARENTRESNAME
+"
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="MarginContainer/HBoxContainer/RightMarginContainer/VBoxContainer/PanelContainer/MarginContainer/ResourceInfo"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/RightMarginContainer/VBoxContainer/PanelContainer/MarginContainer/ResourceInfo/HBoxContainer4"]
+layout_mode = 2
+text = "Parent Resource Value: "
+
+[node name="ParentResourceValue_Label" type="Label" parent="MarginContainer/HBoxContainer/RightMarginContainer/VBoxContainer/PanelContainer/MarginContainer/ResourceInfo/HBoxContainer4"]
+layout_mode = 2
+text = "PRENTRESVALUE
+"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/HBoxContainer/RightMarginContainer/VBoxContainer/PanelContainer/MarginContainer/ResourceInfo"]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="MarginContainer/HBoxContainer/RightMarginContainer/VBoxContainer/PanelContainer/MarginContainer/ResourceInfo/HBoxContainer2"]
+layout_mode = 2
+text = "Child Resource: "
+
+[node name="ChildResource_Label" type="Label" parent="MarginContainer/HBoxContainer/RightMarginContainer/VBoxContainer/PanelContainer/MarginContainer/ResourceInfo/HBoxContainer2"]
+layout_mode = 2
+text = "CHILDRESNAME
+"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer/HBoxContainer/RightMarginContainer/VBoxContainer/PanelContainer/MarginContainer/ResourceInfo"]
+layout_mode = 2
+
+[node name="Label3" type="Label" parent="MarginContainer/HBoxContainer/RightMarginContainer/VBoxContainer/PanelContainer/MarginContainer/ResourceInfo/HBoxContainer3"]
+layout_mode = 2
+text = "Child Resource Value:"
+
+[node name="ChildResourceValue_Label" type="Label" parent="MarginContainer/HBoxContainer/RightMarginContainer/VBoxContainer/PanelContainer/MarginContainer/ResourceInfo/HBoxContainer3"]
+layout_mode = 2
+text = "CHILDRESVALUE
+"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/RightMarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Button_ParentValueInc" type="Button" parent="MarginContainer/HBoxContainer/RightMarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = "Parent Resource Value +"
+
+[node name="Button_ParentValueDec" type="Button" parent="MarginContainer/HBoxContainer/RightMarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = "Parent Resource Value -"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/HBoxContainer/RightMarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Button_ChildValueInc" type="Button" parent="MarginContainer/HBoxContainer/RightMarginContainer/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = "Child Resource Value +"
+
+[node name="Button_ChildValueDec" type="Button" parent="MarginContainer/HBoxContainer/RightMarginContainer/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = "Child Resource Value -"
+
+[node name="Button_SetChildResourceA" type="Button" parent="MarginContainer/HBoxContainer/RightMarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = "Set Child Resource to Waterbottle"
+
+[node name="Button_SetChildResourceB" type="Button" parent="MarginContainer/HBoxContainer/RightMarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = "Set Child Resource to Apples"
+
+[node name="Button_SetParentResourceA" type="Button" parent="MarginContainer/HBoxContainer/RightMarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = "Set Parent Resource to A"
+
+[node name="Button_SetParentResourceB" type="Button" parent="MarginContainer/HBoxContainer/RightMarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = "Set Parent Resource to B
+"
+
+[connection signal="pressed" from="MarginContainer/HBoxContainer/LeftMarginContainer/VBoxContainer/Button_Save" to="." method="_on_button_save_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/LeftMarginContainer/VBoxContainer/Button_Load" to="." method="_on_button_load_pressed"]
